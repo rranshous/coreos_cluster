@@ -1,0 +1,11 @@
+[Unit]
+  Description=Flannel Installer
+  Requires=etcd.service
+  After=etcd.service
+
+[Service]
+  ExecStartPre=bash -c "mkdir -p /opt/bin"
+  ExecStart=/usr/bin/docker run quay.io/rranshous/install_flannel
+
+[Install]
+  WantedBy=multi-user.target
