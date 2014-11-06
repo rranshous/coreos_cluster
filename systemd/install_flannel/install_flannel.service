@@ -2,6 +2,7 @@
   Description=Flannel Installer
   Requires=etcd.service
   After=etcd.service
+  After=coreos_systemd_install.service
 
 [Service]
   ExecStartPre=bash -c "mkdir -p /opt/bin"
